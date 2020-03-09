@@ -1,7 +1,8 @@
 FROM ubuntu:18.04
 
 RUN apt update \
-	&& apt install mingw-w64
+	&& apt install -y mingw-w64 \
+	&& apt install -y git
 
 RUN git clone https://code.qt.io/qt/qt5.git
 RUN cd qt5
