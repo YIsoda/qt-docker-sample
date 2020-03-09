@@ -6,8 +6,8 @@ RUN apt update \
 
 RUN git clone https://code.qt.io/qt/qt5.git
 RUN cd qt5
-RUN git checkout v5.14.1
 RUN ./init-repository
+RUN git checkout v5.14.1
 RUN ./configure
 RUN make
 RUN make install
