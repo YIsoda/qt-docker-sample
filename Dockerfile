@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt update -qq \
+        && add-apt-repository universe \
 	&& apt install -y build-dep qt5-default \
 	&& apt install -y libxcb-xinerama0-dev \
 	&& apt install -qq -y mingw-w64 \
