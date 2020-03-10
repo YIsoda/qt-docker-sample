@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt update -qq \
+        && apt install -y sudo \
         && apt install -y software-properties-common \
         && add-apt-repository universe \
 	&& apt update -qq \
