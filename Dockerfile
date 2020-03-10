@@ -7,6 +7,7 @@ RUN grep '^deb ' /etc/apt/sources.list | \
 	tee /etc/apt/sources.list.d/deb-src.list
 
 RUN apt update -qq \
+	&& apt install -y tzdata \
 	&& apt install -y software-properties-common
 RUN apt update -qq \
 	&& apt-get -y build-dep qt5-default \
