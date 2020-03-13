@@ -21,7 +21,10 @@ WORKDIR /qt5/
 RUN git status
 RUN git checkout 5.14
 RUN ./init-repository
-RUN ./configure -v -opensource -nomake examples -nomake tests
+WORKDIR /
+RUN mkdir build
+WORKDIR /build/
+RUN ../qt5/configure -confirm-license -v -opensource -nomake examples -nomake tests
 RUN make
 RUN make install
 RUN /usr/local/Qt-5.14.1/bin/qmake --version
